@@ -87,6 +87,3 @@ This prototype focuses on Digital Engagement (Problem Statement 3), but the same
 - **Customer Acquisition** — a conversational onboarding agent reusing the same NBA/Compliance/Channel pipeline for new-to-bank leads
 - **Digital Adoption** — the Educate action path generalized into a full adaptive in-app tutorial system
 
-## Team
-
-*(add your team members, college/organization, and roles here)*
