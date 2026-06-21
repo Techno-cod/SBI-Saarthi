@@ -134,10 +134,20 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
 .impact-section-sub { font-size: 12px; color: var(--text2); line-height: 1.6; margin-bottom: 16px; }
 
 .action-bar { display: flex; height: 28px; border-radius: 6px; overflow: hidden; margin-bottom: 14px; }
-.action-bar-segment { height: 100%; }
+.action-bar-segment { height: 100%; cursor: pointer; transition: filter .15s, transform .15s; transform-origin: bottom; }
+.action-bar-segment:hover, .action-bar-segment.hovered { filter: brightness(1.18); transform: scaleY(1.08); }
+
+.action-tooltip { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; min-height: 20px; padding: 0 2px; margin-bottom: 14px; font-size: 11px; color: var(--text2); opacity: 0; transition: opacity .15s; }
+.action-tooltip.visible { opacity: 1; }
+.action-tooltip-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+.action-tooltip-label { font-weight: 600; color: var(--text); }
+.action-tooltip-pct { font-family: 'JetBrains Mono', monospace; color: var(--text3); }
+.action-tooltip-detail { color: var(--text2); flex-basis: 100%; line-height: 1.5; }
+.action-tooltip-hint { color: var(--text3); font-style: italic; opacity: 0; }
 
 .action-legend { display: flex; flex-wrap: wrap; gap: 14px; }
-.action-legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text2); }
+.action-legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text2); cursor: pointer; padding: 2px 6px; border-radius: 4px; transition: background .15s, color .15s; }
+.action-legend-item:hover, .action-legend-item.hovered { background: var(--bg3); color: var(--text); }
 .action-legend-dot { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
 .action-legend-pct { color: var(--text3); font-family: 'JetBrains Mono', monospace; }
 

@@ -301,6 +301,8 @@ export default function App() {
 }
 
 function ImpactDashboard() {
+  const [hoveredAction, setHoveredAction] = useState(null);
+
   const metrics = [
     {
       label: "App engagement rate",
@@ -326,13 +328,15 @@ function ImpactDashboard() {
   ];
 
   const actionDistribution = [
-    { action: "Sell", pct: 38, color: "var(--green)" },
-    { action: "Advise", pct: 18, color: "var(--blue)" },
-    { action: "Educate", pct: 22, color: "var(--amber)" },
-    { action: "Defer", pct: 9, color: "var(--purple)" },
-    { action: "Escalate", pct: 8, color: "var(--red)" },
-    { action: "Do Nothing", pct: 5, color: "var(--text3)" },
+    { action: "Sell", pct: 38, color: "var(--green)", detail: "A relevant product is genuinely a good fit, with no signs of financial stress." },
+    { action: "Advise", pct: 18, color: "var(--blue)", detail: "Customer gets general financial guidance, no specific product is pitched." },
+    { action: "Educate", pct: 22, color: "var(--amber)", detail: "Customer already has a digital feature available but isn't using it — nudged toward adoption, not a sale." },
+    { action: "Defer", pct: 9, color: "var(--purple)", detail: "Timing isn't right — re-evaluated automatically in a future cycle, no outreach sent now." },
+    { action: "Escalate", pct: 8, color: "var(--red)", detail: "Signs of financial stress detected. Marketing is suppressed and the case is routed to a human Relationship Manager." },
+    { action: "Do Nothing", pct: 5, color: "var(--text3)", detail: "Frequency cap reached or no meaningful signal — Saarthi deliberately stays silent this cycle." },
   ];
+
+  const hovered = actionDistribution.find((a) => a.action === hoveredAction);
 
   return (
     <div className="impact-page">
@@ -373,15 +377,35 @@ function ImpactDashboard() {
           {actionDistribution.map((a, i) => (
             <div
               key={i}
-              className="action-bar-segment"
+              className={`action-bar-segment ${hoveredAction === a.action ? "hovered" : ""}`}
               style={{ width: `${a.pct}%`, background: a.color }}
-              title={`${a.action}: ${a.pct}%`}
+              onMouseEnter={() => setHoveredAction(a.action)}
+              onMouseLeave={() => setHoveredAction(null)}
             />
           ))}
         </div>
+
+        <div className={`action-tooltip ${hovered ? "visible" : ""}`}>
+          {hovered ? (
+            <>
+              <span className="action-tooltip-dot" style={{ background: hovered.color }} />
+              <span className="action-tooltip-label">{hovered.action}</span>
+              <span className="action-tooltip-pct">{hovered.pct}%</span>
+              <span className="action-tooltip-detail">{hovered.detail}</span>
+            </>
+          ) : (
+            <span className="action-tooltip-hint">Hover a segment for details</span>
+          )}
+        </div>
+
         <div className="action-legend">
           {actionDistribution.map((a, i) => (
-            <span className="action-legend-item" key={i}>
+            <span
+              className={`action-legend-item ${hoveredAction === a.action ? "hovered" : ""}`}
+              key={i}
+              onMouseEnter={() => setHoveredAction(a.action)}
+              onMouseLeave={() => setHoveredAction(null)}
+            >
               <span className="action-legend-dot" style={{ background: a.color }} />
               {a.action} <span className="action-legend-pct">{a.pct}%</span>
             </span>
