@@ -12,6 +12,7 @@ A financially healthy customer gets a relevant, well-timed product nudge. A cust
 
 ## Architecture
 
+```
 AA Data Ingestion Agent
         ↓
 Behavior & Life-Event Detection Agent
@@ -25,6 +26,7 @@ Channel Selection Agent       ← app, voice call, or human RM
 Engagement Agent              ← generates the actual message
         ↓
 Explainability Agent          ← logs the full reasoning chain
+```
 
 Each stage is a separate, independently testable Python module under `backend/agents/`. The `orchestrator.py` runs the full pipeline for a given customer and assembles a step-by-step explainability log, exactly as shown in the architecture above.
 
@@ -85,3 +87,6 @@ This prototype focuses on Digital Engagement (Problem Statement 3), but the same
 - **Customer Acquisition** — a conversational onboarding agent reusing the same NBA/Compliance/Channel pipeline for new-to-bank leads
 - **Digital Adoption** — the Educate action path generalized into a full adaptive in-app tutorial system
 
+## Team
+
+*(add your team members, college/organization, and roles here)*
