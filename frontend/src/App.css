@@ -102,3 +102,43 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
 @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
 .placeholder { color: var(--text3); font-size: 12px; text-align: center; padding: 24px 14px; line-height: 1.6; }
+
+/* Tab bar */
+.tab-bar { display: flex; gap: 4px; padding: 8px 20px; background: var(--bg2); border-bottom: 1px solid var(--border); flex-shrink: 0; }
+.tab-btn { background: transparent; border: 1px solid transparent; color: var(--text2); font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-family: 'Inter', sans-serif; transition: all .15s; }
+.tab-btn:hover { color: var(--text); background: var(--bg3); }
+.tab-btn.active { color: var(--sbi); background: #0D2137; border-color: #1A4A33; }
+
+/* Impact Dashboard */
+.impact-page { flex: 1; overflow-y: auto; padding: 32px 40px 48px; max-width: 920px; margin: 0 auto; width: 100%; }
+
+.impact-hero { text-align: center; padding: 24px 0 36px; border-bottom: 1px solid var(--border); margin-bottom: 28px; }
+.impact-hero-label { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text3); margin-bottom: 10px; }
+.impact-hero-number { font-family: 'JetBrains Mono', monospace; font-size: 64px; font-weight: 500; color: var(--sbi); line-height: 1; }
+.impact-hero-unit { font-size: 32px; color: var(--text2); }
+.impact-hero-sub { font-size: 13px; color: var(--text2); margin-top: 10px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.5; }
+
+.impact-metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 36px; }
+.impact-metric-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+.impact-metric-label { font-size: 11px; font-weight: 600; color: var(--text2); margin-bottom: 12px; }
+.impact-metric-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.impact-metric-before, .impact-metric-after { display: flex; flex-direction: column; gap: 2px; }
+.impact-metric-tag { font-size: 9px; text-transform: uppercase; letter-spacing: .06em; color: var(--text3); }
+.impact-metric-value-small { font-family: 'JetBrains Mono', monospace; font-size: 16px; color: var(--text2); }
+.impact-metric-value-big { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 500; color: var(--green); }
+.impact-metric-arrow { color: var(--text3); font-size: 14px; }
+.impact-metric-detail { font-size: 11px; color: var(--text3); line-height: 1.5; }
+
+.impact-section { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 24px; }
+.impact-section-title { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.impact-section-sub { font-size: 12px; color: var(--text2); line-height: 1.6; margin-bottom: 16px; }
+
+.action-bar { display: flex; height: 28px; border-radius: 6px; overflow: hidden; margin-bottom: 14px; }
+.action-bar-segment { height: 100%; }
+
+.action-legend { display: flex; flex-wrap: wrap; gap: 14px; }
+.action-legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text2); }
+.action-legend-dot { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+.action-legend-pct { color: var(--text3); font-family: 'JetBrains Mono', monospace; }
+
+.impact-footnote { font-size: 11px; color: var(--text3); line-height: 1.6; padding-top: 16px; border-top: 1px solid var(--border); }

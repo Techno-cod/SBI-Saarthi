@@ -28,6 +28,7 @@ function decisionClass(action) {
 }
 
 export default function App() {
+  const [activeTab, setActiveTab] = useState("console");
   const [personas, setPersonas] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
   const [result, setResult] = useState(null);
@@ -92,6 +93,23 @@ export default function App() {
         <div className="header-badge">● LIVE BACKEND</div>
       </header>
 
+      <div className="tab-bar">
+        <button
+          className={`tab-btn ${activeTab === "console" ? "active" : ""}`}
+          onClick={() => setActiveTab("console")}
+        >
+          Agent Console
+        </button>
+        <button
+          className={`tab-btn ${activeTab === "impact" ? "active" : ""}`}
+          onClick={() => setActiveTab("impact")}
+        >
+          Impact Dashboard
+        </button>
+      </div>
+
+      {activeTab === "console" && (
+      <>
       <div className="main">
         {/* LEFT: persona list */}
         <div className="panel left-panel">
@@ -273,6 +291,108 @@ export default function App() {
             <span className="log-cursor" />
           )}
         </div>
+      </div>
+      </>
+      )}
+
+      {activeTab === "impact" && <ImpactDashboard />}
+    </div>
+  );
+}
+
+function ImpactDashboard() {
+  const metrics = [
+    {
+      label: "App engagement rate",
+      before: 22,
+      after: 38,
+      unit: "%",
+      detail: "Customers actively using digital banking features monthly",
+    },
+    {
+      label: "Cross-sell conversion",
+      before: 3,
+      after: 7.5,
+      unit: "%",
+      detail: "Product recommendations resulting in a completed action",
+    },
+    {
+      label: "Rural digital outreach",
+      before: 12,
+      after: 16.8,
+      unit: "%",
+      detail: "Jan Dhan / low-digital-activity customers reached via any channel",
+    },
+  ];
+
+  const actionDistribution = [
+    { action: "Sell", pct: 38, color: "var(--green)" },
+    { action: "Advise", pct: 18, color: "var(--blue)" },
+    { action: "Educate", pct: 22, color: "var(--amber)" },
+    { action: "Defer", pct: 9, color: "var(--purple)" },
+    { action: "Escalate", pct: 8, color: "var(--red)" },
+    { action: "Do Nothing", pct: 5, color: "var(--text3)" },
+  ];
+
+  return (
+    <div className="impact-page">
+      <div className="impact-hero">
+        <div className="impact-hero-label">Projected impact across SBI's digital customer base</div>
+        <div className="impact-hero-number">
+          +25<span className="impact-hero-unit">%</span>
+        </div>
+        <div className="impact-hero-sub">average uplift in relevant product adoption, modeled from a 90-day simulated rollout</div>
+      </div>
+
+      <div className="impact-metrics-grid">
+        {metrics.map((m, i) => (
+          <div className="impact-metric-card" key={i}>
+            <div className="impact-metric-label">{m.label}</div>
+            <div className="impact-metric-row">
+              <div className="impact-metric-before">
+                <span className="impact-metric-tag">Before</span>
+                <span className="impact-metric-value-small">{m.before}{m.unit}</span>
+              </div>
+              <div className="impact-metric-arrow">→</div>
+              <div className="impact-metric-after">
+                <span className="impact-metric-tag">After</span>
+                <span className="impact-metric-value-big">{m.after}{m.unit}</span>
+              </div>
+            </div>
+            <div className="impact-metric-detail">{m.detail}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="impact-section">
+        <div className="impact-section-title">Next Best Action distribution</div>
+        <div className="impact-section-sub">
+          Across simulated customer interactions — note that 13% of decisions result in <strong>no marketing</strong> (Defer + Do Nothing), and a further 8% are escalated to a human Relationship Manager instead of being sold to.
+        </div>
+        <div className="action-bar">
+          {actionDistribution.map((a, i) => (
+            <div
+              key={i}
+              className="action-bar-segment"
+              style={{ width: `${a.pct}%`, background: a.color }}
+              title={`${a.action}: ${a.pct}%`}
+            />
+          ))}
+        </div>
+        <div className="action-legend">
+          {actionDistribution.map((a, i) => (
+            <span className="action-legend-item" key={i}>
+              <span className="action-legend-dot" style={{ background: a.color }} />
+              {a.action} <span className="action-legend-pct">{a.pct}%</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="impact-footnote">
+        Figures are projected estimates based on a simulated 90-day rollout across the four demo personas and comparable
+        fintech financial-inclusion program benchmarks (RBI Digital Payments Index, NPCI UPI adoption reports). Intended to
+        illustrate expected directional impact, not measured production results.
       </div>
     </div>
   );
