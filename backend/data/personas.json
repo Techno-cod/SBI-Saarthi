@@ -1,0 +1,206 @@
+[
+  {
+    "customer_id": "CUST_1001",
+    "name": "Anita Sharma",
+    "age": 34,
+    "location": "Lucknow",
+    "language_pref": "Hindi",
+    "digital_activity_score": 0.72,
+    "wellness_score": 72,
+    "wellness_score_prev": 68,
+    "accounts": [
+      {
+        "bank": "SBI",
+        "type": "Savings",
+        "amount": "₹2,45,000",
+        "detail": "Avg monthly inflow ₹85,000",
+        "interest_rate": null
+      },
+      {
+        "bank": "HDFC",
+        "type": "Personal Loan",
+        "amount": "₹3,20,000",
+        "detail": "36 months remaining",
+        "interest_rate": 14.5
+      },
+      {
+        "bank": "SBI",
+        "type": "Mutual Fund",
+        "amount": "₹0",
+        "detail": "No holdings",
+        "interest_rate": null
+      },
+      {
+        "bank": "LIC",
+        "type": "Insurance",
+        "amount": "Term Plan",
+        "detail": "Active policy",
+        "interest_rate": null
+      }
+    ],
+    "signals": [
+      "High-interest personal loan at competitor bank",
+      "Stable salary credits for 12 months",
+      "No investment holdings despite healthy savings"
+    ],
+    "metrics": {
+      "savings": "₹2,45,000",
+      "loan_burden_pct": 18,
+      "investments": "None",
+      "emergency_cover_months": 3.2
+    }
+  },
+  {
+    "customer_id": "CUST_1002",
+    "name": "Ramkhelawan Yadav",
+    "age": 52,
+    "location": "Bihar",
+    "language_pref": "Bhojpuri",
+    "digital_activity_score": 0.06,
+    "wellness_score": 58,
+    "wellness_score_prev": 54,
+    "accounts": [
+      {
+        "bank": "SBI",
+        "type": "Jan Dhan",
+        "amount": "₹12,400",
+        "detail": "PM-KISAN scheme credit of ₹6,000 received recently",
+        "interest_rate": null
+      },
+      {
+        "bank": "SBI",
+        "type": "Recurring Deposit",
+        "amount": "₹0",
+        "detail": "No recurring deposit set up",
+        "interest_rate": null
+      },
+      {
+        "bank": "—",
+        "type": "Insurance",
+        "amount": "None",
+        "detail": "No coverage",
+        "interest_rate": null
+      },
+      {
+        "bank": "—",
+        "type": "Investments",
+        "amount": "None",
+        "detail": "No investments held",
+        "interest_rate": null
+      }
+    ],
+    "signals": [
+      "Government scheme deposit received",
+      "No insurance coverage of any kind",
+      "Very low digital activity, branch-dependent"
+    ],
+    "metrics": {
+      "savings": "₹12,400",
+      "loan_burden_pct": 0,
+      "investments": "None",
+      "emergency_cover_months": 0.8
+    }
+  },
+  {
+    "customer_id": "CUST_1003",
+    "name": "Priya Mehta",
+    "age": 38,
+    "location": "Mumbai",
+    "language_pref": "Hindi",
+    "digital_activity_score": 0.45,
+    "wellness_score": 34,
+    "wellness_score_prev": 61,
+    "accounts": [
+      {
+        "bank": "SBI",
+        "type": "Savings",
+        "amount": "₹18,200",
+        "detail": "Balance declining for 3 consecutive months",
+        "interest_rate": null
+      },
+      {
+        "bank": "SBI",
+        "type": "Home Loan",
+        "amount": "₹28,00,000",
+        "detail": "EMI ₹24,000 per month",
+        "interest_rate": 8.9
+      },
+      {
+        "bank": "ICICI",
+        "type": "Personal Loan",
+        "amount": "₹4,50,000",
+        "detail": "EMI ₹14,000 per month",
+        "interest_rate": 16.2
+      },
+      {
+        "bank": "—",
+        "type": "Credit Card",
+        "amount": "₹62,000",
+        "detail": "Outstanding across 2 cards",
+        "interest_rate": null
+      }
+    ],
+    "signals": [
+      "EMIs consume 62% of monthly inflow",
+      "Savings balance declining for 3 months",
+      "2 new loan inquiries in the last 30 days"
+    ],
+    "metrics": {
+      "savings": "₹18,200",
+      "loan_burden_pct": 62,
+      "investments": "None",
+      "emergency_cover_months": 0.4
+    }
+  },
+  {
+    "customer_id": "CUST_1004",
+    "name": "Karthik Iyer",
+    "age": 45,
+    "location": "Chennai",
+    "language_pref": "Tamil",
+    "digital_activity_score": 0.12,
+    "wellness_score": 65,
+    "wellness_score_prev": 63,
+    "accounts": [
+      {
+        "bank": "SBI",
+        "type": "Savings",
+        "amount": "₹1,08,000",
+        "detail": "Stable balance, prefers branch visits",
+        "interest_rate": null
+      },
+      {
+        "bank": "SBI",
+        "type": "Fixed Deposit",
+        "amount": "₹2,50,000",
+        "detail": "Matures September 2026",
+        "interest_rate": 7.1
+      },
+      {
+        "bank": "—",
+        "type": "YONO App",
+        "amount": "Installed",
+        "detail": "Bill-pay feature never used",
+        "interest_rate": null
+      },
+      {
+        "bank": "—",
+        "type": "UPI",
+        "amount": "Set up",
+        "detail": "Zero transactions in last 90 days",
+        "interest_rate": null
+      }
+    ],
+    "signals": [
+      "App installed but digital features unused",
+      "Frequent branch visits for routine bill payments",
+      "Healthy savings and fixed deposit balance"
+    ],
+    "metrics": {
+      "savings": "₹1,08,000",
+      "loan_burden_pct": 0,
+      "investments": "FD ₹2,50,000",
+      "emergency_cover_months": 5.8
+    }
+  }
+]
