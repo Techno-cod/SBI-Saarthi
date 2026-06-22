@@ -177,6 +177,38 @@ export default function App() {
                   />
                 </div>
               </div>
+              {result && (
+  <div className="wellness-breakdown">
+    <div className="section-label">Wellness score breakdown</div>
+    {Object.entries(result.behavior_summary.wellness_breakdown).map(([key, val]) => {
+      const labels = {
+        savings_trend: "Savings trend",
+        debt_burden: "Debt burden",
+        investments: "Investment coverage",
+        emergency_cover: "Emergency cover",
+      };
+      const pct = (val.score / val.max) * 100;
+      const barColor = pct >= 72 ? "var(--green)" : pct >= 48 ? "var(--amber)" : "var(--coral)";
+      return (
+        <div className="breakdown-row" key={key}>
+          <div className="breakdown-header">
+            <span className="breakdown-label">{labels[key]}</span>
+            <span className="breakdown-score" style={{ color: barColor }}>
+              {val.score}<span style={{ color: "var(--text3)" }}>/{val.max}</span>
+            </span>
+          </div>
+          <div className="breakdown-bar-bg">
+            <div
+              className="breakdown-bar-fill"
+              style={{ width: `${pct}%`, background: barColor }}
+            />
+          </div>
+          <div className="breakdown-detail">{val.label}</div>
+        </div>
+      );
+    })}
+  </div>
+)}
 
               {result && (
                 <div className="accounts-section">

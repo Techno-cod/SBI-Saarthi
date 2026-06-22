@@ -6,7 +6,7 @@
     "location": "Lucknow",
     "language_pref": "Hindi",
     "digital_activity_score": 0.72,
-    "wellness_score": 72,
+    "wellness_score": 80,
     "wellness_score_prev": 68,
     "accounts": [
       {
@@ -57,7 +57,7 @@
     "location": "Bihar",
     "language_pref": "Bhojpuri",
     "digital_activity_score": 0.06,
-    "wellness_score": 58,
+    "wellness_score": 62,
     "wellness_score_prev": 54,
     "accounts": [
       {
@@ -108,8 +108,8 @@
     "location": "Mumbai",
     "language_pref": "Hindi",
     "digital_activity_score": 0.45,
-    "wellness_score": 34,
-    "wellness_score_prev": 61,
+    "wellness_score": 13,
+    "wellness_score_prev": 42,
     "accounts": [
       {
         "bank": "SBI",
@@ -159,7 +159,7 @@
     "location": "Chennai",
     "language_pref": "Tamil",
     "digital_activity_score": 0.12,
-    "wellness_score": 65,
+    "wellness_score": 81,
     "wellness_score_prev": 63,
     "accounts": [
       {

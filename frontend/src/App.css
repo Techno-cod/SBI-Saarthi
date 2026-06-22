@@ -152,3 +152,13 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
 .action-legend-pct { color: var(--text3); font-family: 'JetBrains Mono', monospace; }
 
 .impact-footnote { font-size: 11px; color: var(--text3); line-height: 1.6; padding-top: 16px; border-top: 1px solid var(--border); }
+
+.wellness-breakdown { padding: 12px 14px; border-bottom: 1px solid var(--border); }
+.breakdown-row { margin-bottom: 12px; }
+.breakdown-row:last-child { margin-bottom: 0; }
+.breakdown-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+.breakdown-label { font-size: 11px; font-weight: 500; color: var(--text2); }
+.breakdown-score { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; }
+.breakdown-bar-bg { height: 4px; background: var(--bg3); border-radius: 2px; overflow: hidden; margin-bottom: 3px; }
+.breakdown-bar-fill { height: 100%; border-radius: 2px; transition: width .6s ease, background .6s ease; }
+.breakdown-detail { font-size: 10px; color: var(--text3); }
