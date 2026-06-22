@@ -264,6 +264,24 @@ export default function App() {
               Run the agents to see the Next Best Action decision and generated engagement message.
             </div>
           )}
+          {result &&
+  result.final_decision.channel === "Voice call (regional language)" &&
+  selectedId === "CUST_1002" && (
+  <div className="voice-player">
+    <div className="voice-player-label">
+      🎙 Simulated voice call — Bhojpuri
+    </div>
+    <audio
+      controls
+      src="/ramkhelawan_voice.mp3"
+      style={{ width: "100%", marginTop: 6 }}
+    />
+    <div className="voice-translation">
+  <span className="voice-translation-label">Translation: </span>
+  "Hello! This is SBI Saarthi. A government scheme deposit has recently been credited to your account. Congratulations! If you wish, you can start a Recurring Deposit in small monthly instalments to save this money safely. For more information, please contact your nearest SBI branch. Thank you."
+</div>
+  </div>
+)}
 
           {result && (
             <>

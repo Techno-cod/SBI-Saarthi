@@ -53,11 +53,19 @@ def generate_message(behavior_summary: dict, final_decision: dict) -> dict:
             )
 
     elif action == "Advise":
-        message = (
-            f"Hi {name}, we noticed some patterns in your finances worth a look. "
-            f"We're not pitching anything today — just sharing a quick tip that "
-            f"might help you plan better. Want to see it?"
-        )
+        if behavior_summary.get("customer_id") == "CUST_1002":
+            message = (
+                "नमस्ते! हम SBI सारथी बोलत बानी। रउरा खाता में हाल ही में सरकारी योजना के "
+                "पैसा जमा भइल बा। बधाई हो! अगर रउरा चाहीं, त एह पैसा के सुरक्षित बचत खातिर "
+                "हर महीना छोट-छोट किस्त में रिकरिंग डिपॉजिट शुरू कर सकत बानी। अधिक जानकारी "
+                "खातिर नजदीकी SBI शाखा से संपर्क करीं। धन्यवाद।"
+            )
+        else:
+            message = (
+                f"Hi {name}, we noticed some patterns in your finances worth a look. "
+                f"We're not pitching anything today — just sharing a quick tip that "
+                f"might help you plan better. Want to see it?"
+            )
 
     elif action == "Educate":
         message = (
